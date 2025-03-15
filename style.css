@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    font-family: "Prompt", sans-serif;
+    color: rgb(89, 46, 0);
+}
+
+header {
+    padding: 30px 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header button {
+    margin-left: auto;
+    border: 2px solid rgb(108, 54, 3);
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 20px 50px;
+}
+
+.book {
+    background-color: rgb(108, 54, 3);
+    color: #f1f1f1;
+    min-width: 230px;
+    height: 270px;
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 10px 12px 12px rgba(0, 0, 0, 0.487);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.book:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+button:hover, footer img:hover {
+    transform: scale(1.15);
+    transition: transform 0.3s;
+}
+
+.toggle-read-btn, .delete-btn {
+    color: #f1f1f1;
+    height: 32px;
+    width: 120px;
+    border-radius: 5px;
+
+}
+
+.toggle-read-btn {
+    background-color: rgb(2, 207, 2);
+}
+
+.delete-btn {
+    background-color: red;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 15px;
+}
+
+footer img:hover {
+    rotate: 360deg;
+    transition: rotate 0.4s;
+    cursor: pointer;
+}

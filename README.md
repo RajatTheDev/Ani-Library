@@ -1,6 +1,6 @@
 # Ani Library 📚  
 
-Ani Library is a simple web-based book library where users can add, toggle read status, and delete books. It is built using HTML, CSS, and JavaScript.
+Ani Library is a simple and interactive web-based book library that lets users add books, toggle their read status, and delete them. Built with HTML, CSS, and JavaScript, it provides an easy way to manage and track your book collection with a clean and user-friendly interface.
 
 ![Ani Library Screenshot](/images/Screenshot.jpg)
 

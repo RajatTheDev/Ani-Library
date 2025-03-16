@@ -1,4 +1,7 @@
 const bookContainer = document.querySelector('.books-container');
+const formDialog = document.querySelector('#form-dialog');
+const formSubmit = document.querySelector('.form-submit-btn');
+const formCancel = document.querySelector('.form-cancel-btn');
 const addBook = document.querySelector('.add-book');
 const deleteBtn = document.querySelector('.delete-btn'); 
 const toggleReadBtn = document.querySelector('.toggle-read-btn');
@@ -37,13 +40,33 @@ function displayBooks() {
         bookDiv.appendChild(bookPages);
 
         const bookRead = document.createElement('button');
-        bookRead.textContent = book.read;
+        if (book.read === true || book.read === 'Read') {
+            bookRead.textContent = 'Read';
+            bookRead.setAttribute('style', 'background-color: green; color: white');
+        }
+        else {
+            bookRead.textContent = 'Not Read';
+            bookRead.setAttribute('style', 'background-color: yellow; color: rgb(89, 46, 0)');
+        }
         bookRead.classList.add('toggle-read-btn');
+
+        bookRead.addEventListener('click', () => {
+            book.read = !book.read;
+            displayBooks();
+        });
+
         bookDiv.appendChild(bookRead);
 
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
         deleteBtn.classList.add('delete-btn');
+
+        deleteBtn.addEventListener('click', () => {
+            const bookIndex = myLibrary.findIndex(b => b.id === book.id);
+            myLibrary.splice(bookIndex, 1);
+            displayBooks();
+        });
+
         bookDiv.appendChild(deleteBtn);
 
         bookContainer.appendChild(bookDiv);
@@ -59,11 +82,25 @@ defaultBooks.forEach(book => addBookToLibrary(book));
 displayBooks();
 
 addBook.addEventListener('click', () => {
-    const title = prompt('Title');
-    const author = prompt('Author');
-    const pages = prompt('Pages');
-    const read = prompt('Read');
+    formDialog.showModal();
+});
+
+formSubmit.addEventListener('click', () => {
+    if (document.querySelector('#title').value === '' || document.querySelector('#author').value === '' || document.querySelector('#pages').value === '') {
+        preventDefault();
+    }
+    const form = document.querySelector('.form');
+    const title = form.title.value;
+    const author = form.author.value;
+    const pages = form.pages.value;
+    const read = form.read.checked;
     const book = new Book(title, author, pages, read);
     addBookToLibrary(book);
     displayBooks();
+    document.querySelector('.form').reset();
+    formDialog.close();
+});
+
+formCancel.addEventListener('click', () => {
+    formDialog.close();
 });

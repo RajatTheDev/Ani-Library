@@ -22,13 +22,30 @@ function displayBooks() {
     myLibrary.forEach(book => {
         const bookDiv = document.createElement('div');
         bookDiv.classList.add('book');
-        bookDiv.innerHTML = `
-            <h2>${book.title}</h2>
-            <p>Author: ${book.author}</p>
-            <p>Pages: ${book.pages}</p>
-            <button class = "toggle-read-btn">${book.read}</button>
-            <button class = "delete-btn">Delete</button>
-        `;
+        bookDiv.setAttribute('book-id', book.id);
+        
+        const bookTitle = document.createElement('h2');
+        bookTitle.textContent = book.title;
+        bookDiv.appendChild(bookTitle);
+
+        const bookAuthor = document.createElement('p');
+        bookAuthor.textContent = `Author: ${book.author}`;
+        bookDiv.appendChild(bookAuthor);
+
+        const bookPages = document.createElement('p');
+        bookPages.textContent = `Pages: ${book.pages}`;
+        bookDiv.appendChild(bookPages);
+
+        const bookRead = document.createElement('button');
+        bookRead.textContent = book.read;
+        bookRead.classList.add('toggle-read-btn');
+        bookDiv.appendChild(bookRead);
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.classList.add('delete-btn');
+        bookDiv.appendChild(deleteBtn);
+
         bookContainer.appendChild(bookDiv);
     });
 }

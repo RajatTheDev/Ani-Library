@@ -6,7 +6,7 @@ Ani Library is a simple web-based book library where users can add, toggle read 
 ## Table of Content
 
 - [Features](#features)
-- [Live Website](#live-website)
+- [Live Preview](#live-preview)
 - [Technologies Used](#technologies-used)
 - [How to Use](#how-to-use)
 - [Installation](#getting-started)
@@ -20,9 +20,9 @@ Ani Library is a simple web-based book library where users can add, toggle read 
 - Delete books from the library
 - Responsive and clean UI
 
-## Live Website
+## Live Preview
 
-- Live Preview: [Admin Dashboard](https://rajatthedev.github.io/Ani-Library/)
+- Live Preview: [Ani Library](https://rajatthedev.github.io/Ani-Library/)
 
 ## Technologies Used  
 

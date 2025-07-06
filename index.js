@@ -7,12 +7,14 @@ const deleteBtn = document.querySelector('.delete-btn');
 const toggleReadBtn = document.querySelector('.toggle-read-btn');
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.id = crypto.randomUUID();
+class Book {
+    constructor (title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.id = crypto.randomUUID();
+    }
 }
 
 function addBookToLibrary(book) {
@@ -85,10 +87,13 @@ addBook.addEventListener('click', () => {
     formDialog.showModal();
 });
 
-formSubmit.addEventListener('click', () => {
-    if (document.querySelector('#title').value === '' || document.querySelector('#author').value === '' || document.querySelector('#pages').value === '') {
-        preventDefault();
+formSubmit.addEventListener('click', (event) => {
+    if (document.querySelector('#title').value === '' || document.querySelector('#author').value === '' || document.querySelector('#pages').value === ''){
+        event.preventDefault();
+        alert("All fields must be filled out!");
+        return;
     }
+
     const form = document.querySelector('.form');
     const title = form.title.value;
     const author = form.author.value;

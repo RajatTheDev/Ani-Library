@@ -19,31 +19,30 @@
 
     <dialog id="form-dialog">
         <h2 class="dialog-heading">Add a Book</h2>
-        <form class="form" method="dialog">
+        <form class="form" method="dialog" novalidate>
 
             <div>
                 <label for="title">Title</label>
-                <input type="text" id="title" name="title">
+                <input type="text" id="title" name="title" required>
             </div>
 
             <div>
                 <label for="author">Author</label>
-                <input type="text" id="author" name="author">
+                <input type="text" id="author" name="author" required>
             </div>
 
             <div>
                 <label for="pages">Pages</label>
-                <input type="number" id="pages" name="pages">
+                <input type="number" id="pages" name="pages" required>
             </div>
 
             <div>
                 <label for="read">Read</label>
                 <input type="checkbox" id="read" name="read">
             </div>
-
             <div>
- <button type="button" class="form-cancel-btn">Cancel</button>
-            <button type="submit" class="form-submit-btn">Confirm</button>
+                <button type="button" class="form-cancel-btn">Cancel</button>
+                <button type="submit" class="form-submit-btn">Confirm</button>
             </div>
 
         </form>
